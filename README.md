@@ -21,3 +21,14 @@ To monitor the growth and structural changes of crop organs, dynamic plant pheno
   <strong><em>The overall framework of 3D-OGT. (a) is the step for new organ detection of point cloud based on the pre-trained 3D-NOD network; (b) implements inhomogeneous down-sampling; (c) employs semi-supervised learning for organ label broadcasting; (d) performs the label propagation and refinement. </em></strong>
 </p>
 <p align="center">
+
+
+
+
+Quick Start
+------
+This project contains three folders.<br>
+folder <strong>[data_preprocessing]</strong> contains all the code to process the raw dataset and converts the processed data into .h5 format for network training and testing<br>
+folder <strong>[backbone_network]</strong> contains the dgcnn model that serves as the main architecture for 3D-NOD, it also contains parts of the raw dataset and processed .h5 files which can be used to train and test the model<br>
+folder <strong>[data_post-processing]</strong> contains all the code for the Split & Refinement phase, which post-processes the test results to obtain the final quantitative and qualitative results.<br>
+<br>
