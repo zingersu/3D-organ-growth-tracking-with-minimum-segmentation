@@ -26,5 +26,6 @@ Quick Start
 This project contains six folders.<br>
 folder <strong>[code]</strong> contains the complete implementation of the 3D-OGT framework<br>
 folder <strong>[norm_GT_fps]</strong> contains all point cloud files with complete and precise instance labels, serving as the foundation for calculating quantitative tracking metrics<br>
-folder <strong>[instance_old_organ(3D-NOD)]</strong> contains all the code for the Split & Refinement phase, which post-processes the test results to obtain the final quantitative and qualitative results.<br>
+folder <strong>[instance_new_organ(3D-NOD)]</strong> and folder <strong>[instance_old_organ(3D-NOD)]</strong> comprise the outputs of the 3D-NOD framework, which is uesd as a pre-trained network for detecting new organs. Then the complete plant point cloud is divided into two categories: new organs and old organs.<br>
+folder <strong>[instance_new_organ(by human)]</strong> and folder <strong>[instance_old_organ(by human)]</strong> contain their manually curated counterparts, where human annotation replaces the pre-trained network in detecting new organs before dividing them into the same two categories.<br>
 <br>
