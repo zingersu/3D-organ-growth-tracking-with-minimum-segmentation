@@ -30,4 +30,11 @@ folder <strong>[instance_new_organ(3D-NOD)]</strong> and folder <strong>[instanc
 folder <strong>[instance_new_organ(by human)]</strong> and folder <strong>[instance_old_organ(by human)]</strong> contain their manually curated counterparts, where human annotation replaces the pre-trained network in detecting new organs before dividing them into the same two categories.<br>
 <br>
 <strong>Note:</strong> When running the code, if standard_mode is True, it refers to the standard 3D-OGT using the pre-trained 3D-NOD network; conversely, if standard_mode is False, it represents the control group employing the fully manual new organ detection module.<br>
+
+<strong><em>code</em></strong><br>
+Raw data needs to be preprocessed before it can be fed into networks for training or testing, and pre-processing of raw data can be achieved with the following code.<br>
+* file <strong>[1_train.py]</strong> is used to convert the PCD files into TXT files for subsequent processing.<br>
+* file <strong>[01norm.py]</strong> is used to normalise the original TXT files for subsequent ICP registration.<br>
+* file <strong>[02FPS_once.py]</strong> is used to downsample the points in the file to 2048 points using FPS.<br>
+* file <strong>[03ICP.py]</strong> is used to match the point clouds of neighbouring moments two by two and use the T+1 moment point cloud and the T moment point cloud for alignment.<br>
 <br>
