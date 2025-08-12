@@ -32,9 +32,9 @@ folder <strong>[instance_new_organ(by human)]</strong> and folder <strong>[insta
 <strong>Note:</strong> When running the code, if standard_mode is True, it refers to the standard 3D-OGT using the pre-trained 3D-NOD network; conversely, if standard_mode is False, it represents the control group employing the fully manual new organ detection module.<br>
 
 <strong><em>code</em></strong><br>
-Raw data needs to be preprocessed before it can be fed into networks for training or testing, and pre-processing of raw data can be achieved with the following code.<br>
-* file <strong>[1_train.py]</strong> is used to convert the PCD files into TXT files for subsequent processing.<br>
-* file <strong>[01norm.py]</strong> is used to normalise the original TXT files for subsequent ICP registration.<br>
-* file <strong>[02FPS_once.py]</strong> is used to downsample the points in the file to 2048 points using FPS.<br>
-* file <strong>[03ICP.py]</strong> is used to match the point clouds of neighbouring moments two by two and use the T+1 moment point cloud and the T moment point cloud for alignment.<br>
+The folder contains the specific implementation of the 3D-OGT framework, providing all the necessary scripts and modules required to run the organ growth tracking system.<br>
+* file <strong>[1_train.py]</strong> is used to track organ growth throughout the entire crop point cloud sequence.<br>
+* file <strong>[2_eval_label_reset.py]</strong> is used to reset the instance label corresponding to the new organ, avoiding the decline in quantitative tracking results due to missed detection of the new organ.<br>
+* file <strong>[3_eval_iou_track.py]</strong> is used to <br>
+* file <strong>[4_evaluation.py]</strong> is used to <br>
 <br>
