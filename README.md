@@ -35,6 +35,6 @@ folder <strong>[instance_new_organ(by human)]</strong> and folder <strong>[insta
 The folder contains the specific implementation of the 3D-OGT framework, providing all the necessary scripts and modules required to run the organ growth tracking system.<br>
 * file <strong>[1_train.py]</strong> is used to track organ growth throughout the entire crop point cloud sequence.<br>
 * file <strong>[2_eval_label_reset.py]</strong> is used to reset the instance label corresponding to the new organ, avoiding the decline in quantitative tracking results due to missed detection of the new organ.<br>
-* file <strong>[3_eval_iou_track.py]</strong> is used to <br>
-* file <strong>[4_evaluation.py]</strong> is used to <br>
+* file <strong>[3_eval_iou_track.py]</strong> is used to calculate the Intersection over Union (IoU) between all ground-truth organ instance labels and all algorithm-predicted organ instance labels, forming an IoU matrix. Then for each ground-truth organ, we search for the corresponding organ label number, where the organ point set represented by the organ label number can yield the maximum IoU value with this ground-truth organ. <br>
+* file <strong>[4_evaluation.py]</strong> is used to calculate the final quantitative tracking results for each plant variety.<br>
 <br>
