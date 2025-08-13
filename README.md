@@ -31,7 +31,7 @@ folder <strong>[norm_GT_fps]</strong> contains all point cloud files with comple
 folder <strong>[instance_new_organ(3D-NOD)]</strong> and folder <strong>[instance_old_organ(3D-NOD)]</strong> comprise the outputs of the 3D-NOD framework, which is uesd as a pre-trained network for detecting new organs. Then the complete plant point cloud is divided into two categories: new organs and old organs.<br>
 folder <strong>[instance_new_organ(by human)]</strong> and folder <strong>[instance_old_organ(by human)]</strong> contain their manually curated counterparts, where human annotation replaces the pre-trained network in detecting new organs before dividing them into the same two categories.<br>
 <br>
-<strong>Note:</strong> When running the code, if standard_mode is True, it refers to the standard 3D-OGT using the pre-trained 3D-NOD network; conversely, if standard_mode is False, it represents the control group employing the fully manual new organ detection module.<br>
+<strong>Note:</strong> When running the code, if <strong>standard_mode</strong> is True, it refers to the standard 3D-OGT using the pre-trained 3D-NOD network; conversely, if <strong>standard_mode</strong> is False, it represents the control group employing the fully manual new organ detection module.<br>
 
 <strong><em>code</em></strong><br>
 The folder contains the specific implementation of the 3D-OGT framework, providing all the necessary scripts and modules required to run the organ growth tracking system.<br>
