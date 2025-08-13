@@ -19,6 +19,9 @@ To monitor the growth and structural changes of crop organs, dynamic plant pheno
 <p align="center">
   <strong><em>The overall framework of 3D-OGT. (a) is the step for new organ detection of point cloud based on the pre-trained 3D-NOD network; (b) implements inhomogeneous down-sampling; (c) employs semi-supervised learning for organ label broadcasting; (d) performs the label propagation and refinement. </em></strong>
 </p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ac0ad520-3351-48d9-9688-ccb081cf455a" alt="Fig 1" width="70%"/>
+</p>
 
 Quick Start
 ------
