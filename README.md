@@ -2,7 +2,7 @@
 =====
 Prerequisites
 ------
-In the standard mode, we use 3D-NOD framework as the pre-trained network and apply it as a new organ detection module. For details on its specific implementation, please refer to https://github.com/zingersu/3D-New-Organ-Detection-in-Plant-Growth-from-Spatiotemporal-Point-Clouds
+In the standard mode, we use 3D-NOD framework as the pre-trained network and apply it as a new organ detection module. For details on its specific implementation, please refer to https://github.com/zingersu/3D-New-Organ-Detection-in-Plant-Growth-from-Spatiotemporal-Point-Clouds.<br>
 After identifying new and old organs, all codes run under the pytorch version, and its corresponding configurations are as follows:<br>
 * The 3D-OGT framework runs under Windows 11<br>
 * Current code execution environment:<br>
