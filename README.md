@@ -10,17 +10,6 @@ Published online on *Plant Phenomics* in 2026<br>
 [[Paper](https://www.sciencedirect.com/science/article/pii/S264365152600018X)]
 [[10-minute presentation](https://www.bilibili.com/video/BV12hkuB3EuH)]
 
-Prerequisites
-------
-In the standard mode, we use 3D-NOD framework as the pre-trained network and apply it as a new organ detection module. For details on its specific implementation, please refer to https://github.com/zingersu/3D-New-Organ-Detection-in-Plant-Growth-from-Spatiotemporal-Point-Clouds. After identifying new and old organs, all codes run under the pytorch version, and its corresponding configurations are as follows:<br>
-* The 3D-OGT framework runs under Windows 11<br>
-* Current code execution environment:<br>
-    * Python == 3.8.20<br>
-    * Pytorch == 2.1.2<br>
-    * CUDA == 12.1<br>
-    * Pandas == 2.0.3<br>
-    * Scikit-learn == 1.3.2<br>
-
 Introduction
 ------
 To monitor the growth and structural changes of crop organs, dynamic plant phenotyping based on time-series point clouds has become a cutting-edge research topic. However, existing organ tracking methods based on crop time-series point clouds either rely on complete organ instance segmentation results or lack real-time performance in capturing spatiotemporal correlations among organs. These limitations significantly hinder the development of dynamic crop phenotyping.<br>
@@ -32,6 +21,17 @@ To monitor the growth and structural changes of crop organs, dynamic plant pheno
 <p align="center">
   <img src="https://github.com/user-attachments/assets/72d9fadd-abe5-4c77-a816-835b8724b9af" alt="3D-OGT" width="100%"/>
 </p>
+
+Prerequisites
+------
+In the standard mode, we use 3D-NOD framework as the pre-trained network and apply it as a new organ detection module. For details on its specific implementation, please refer to https://github.com/zingersu/3D-New-Organ-Detection-in-Plant-Growth-from-Spatiotemporal-Point-Clouds. After identifying new and old organs, all codes run under the pytorch version, and its corresponding configurations are as follows:<br>
+* The 3D-OGT framework runs under Windows 11<br>
+* Current code execution environment:<br>
+    * Python == 3.8.20<br>
+    * Pytorch == 2.1.2<br>
+    * CUDA == 12.1<br>
+    * Pandas == 2.0.3<br>
+    * Scikit-learn == 1.3.2<br>
 
 Quick Start
 ------
