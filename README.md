@@ -5,7 +5,7 @@ This repo contains the official data and code for our paper:
 3D-OGT: 3D organ growth tracking with minimum segmentation.<br>
 [D. Li†](https://davidleepp.github.io/), Z. Wang†, L. Liu, and M. Li*<br>
 † Equal contribution<br>
-*** Corresponding author<br>
+* Corresponding author<br>
 Published online on *Plant Phenomics* in 2026<br>
 [[Paper](https://www.sciencedirect.com/science/article/pii/S264365152600018X)]
 [[10-minute presentation](https://www.bilibili.com/video/BV12hkuB3EuH)]
