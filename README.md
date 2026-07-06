@@ -2,7 +2,7 @@
 =====
 This repo contains the official data and code for our paper:
 
-3D-OGT: 3D organ growth tracking with minimum segmentation.<br>
+<strong>3D-OGT: 3D organ growth tracking with minimum segmentation.</strong><br>
 [D. Li†](https://davidleepp.github.io/), Z. Wang†, L. Liu, and M. Li*<br>
 † Equal contribution<br>
 '*' Corresponding author<br>
