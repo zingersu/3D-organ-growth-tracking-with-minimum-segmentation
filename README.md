@@ -1,5 +1,15 @@
-3D organ growth tracking with minimum segmentation
+3D-OGT
 =====
+This repo contains the official data and code for our paper:
+
+3D-OGT: 3D organ growth tracking with minimum segmentation.<br>
+[D. Li†](https://davidleepp.github.io/), Z. Wang†, L. Liu, and M. Li*<br>
+† Equal contribution<br>
+* Corresponding author<br>
+Published online on *Plant Phenomics* in 2026<br>
+[[Paper](https://www.sciencedirect.com/science/article/pii/S264365152600018X)]
+[[10-minute presentation](https://www.bilibili.com/video/BV12hkuB3EuH)]
+
 Prerequisites
 ------
 In the standard mode, we use 3D-NOD framework as the pre-trained network and apply it as a new organ detection module. For details on its specific implementation, please refer to https://github.com/zingersu/3D-New-Organ-Detection-in-Plant-Growth-from-Spatiotemporal-Point-Clouds. After identifying new and old organs, all codes run under the pytorch version, and its corresponding configurations are as follows:<br>
