@@ -62,7 +62,7 @@ folder <strong>[pretrained_3D-NOD]</strong> holds the 3D-NOD new-organ predictio
 * file <strong>[1_Filter_Noise_DBSCAN.py]</strong>: A three-stage post-processing pipeline (DBSCAN denoising + KNN relabeling + embedded-organ correction) for 3D-NOD per-frame point-cloud predictions.<br>
 * file <strong>[2_Cluster_labelling.py]</strong>: Layered DBSCAN plus nearest-cluster assignment to produce instance-level labels (0 = old organ, 1, 2, 3… = new organs) for the filtered new-organ points.<br>
 * file <strong>[3_Judge_BFL.py]</strong>: Aligns adjacent frames with CPD and, using a one-to-one greedy match on angle + center-distance difference, detects duplicate copies of the same organ across consecutive frames — keeping the larger copy and resetting the other to the old-organ label — then unifies the two per-frame edit passes (source / target) by label pairs to produce cross-frame-consistent organ labels.<br>
-* file <strong>[2_Cluster_labelling.py]</strong>: Reads the final predictions, re-maps labels to consecutive integers, and splits each frame into old-organ (label 0) and new-organ (non-zero) point clouds exported to separate directories.<br>
+* file <strong>[4_Distinguish_organ.py]</strong>: Reads the final predictions, re-maps labels to consecutive integers, and splits each frame into old-organ (label 0) and new-organ (non-zero) point clouds exported to separate directories.<br>
 * file <strong>[read_pointclouds.py]</strong>: Visualization for the point cloud.<br>
 
 <br>
