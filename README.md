@@ -52,11 +52,13 @@ In order to stably track all organs in a 4D crop growth sequence, we believe tha
 
 Quick Start
 ------
-This project contains six folders.<br>
+This project contains seven folders.<br>
 folder <strong>[code]</strong> contains the complete implementation of the 3D-OGT framework.<br>
 folder <strong>[norm_GT_fps]</strong> contains all point cloud files with complete and precise instance labels, serving as the foundation for calculating quantitative tracking metrics.<br>
 folder <strong>[instance_new_organ(3D-NOD)]</strong> and folder <strong>[instance_old_organ(3D-NOD)]</strong> comprise the outputs of the 3D-NOD framework, which is uesd as a pre-trained network for detecting new organs. Then the complete plant point cloud is divided into two categories: new organs and old organs.<br>
 folder <strong>[instance_new_organ(by human)]</strong> and folder <strong>[instance_old_organ(by human)]</strong> contain their manually curated counterparts, where human annotation replaces the pre-trained network in detecting new organs before dividing them into the same two categories.<br>
+folder <strong>[pretrained_3D-NOD]</strong> holds the 3D-NOD new-organ predictions <strong>[3D-NOD_Predict_results]</strong> together with the post-processing code <strong>[code]</strong> that converts them into data ready for 3D-OGT training.<br>
+
 <br>
 <strong>Note:</strong> When running the code, if standard_mode is True, it refers to the standard 3D-OGT using the pre-trained 3D-NOD network; conversely, if standard_mode is False, it represents the control group employing the fully manual new organ detection module.<br>
 
