@@ -58,6 +58,12 @@ folder <strong>[norm_GT_fps]</strong> contains all point cloud files with comple
 folder <strong>[instance_new_organ(3D-NOD)]</strong> and folder <strong>[instance_old_organ(3D-NOD)]</strong> comprise the outputs of the 3D-NOD framework, which is uesd as a pre-trained network for detecting new organs. Then the complete plant point cloud is divided into two categories: new organs and old organs.<br>
 folder <strong>[instance_new_organ(by human)]</strong> and folder <strong>[instance_old_organ(by human)]</strong> contain their manually curated counterparts, where human annotation replaces the pre-trained network in detecting new organs before dividing them into the same two categories.<br>
 folder <strong>[pretrained_3D-NOD]</strong> holds the 3D-NOD new-organ predictions <strong>[3D-NOD_Predict_results]</strong> together with the post-processing code <strong>[code]</strong> that converts them into data ready for 3D-OGT training.<br>
+* <strong><em>code</em></strong><br>
+* file <strong>[1_Filter_Noise_DBSCAN.py]</strong>: A three-stage post-processing pipeline (DBSCAN denoising + KNN relabeling + embedded-organ correction) for 3D-NOD per-frame point-cloud predictions.<br>
+* file <strong>[2_Cluster_labelling.py]</strong>: Layered DBSCAN plus nearest-cluster assignment to produce instance-level labels (0 = old organ, 1, 2, 3… = new organs) for the filtered new-organ points.<br>
+* file <strong>[3_Judge_BFL.py]</strong>: Aligns adjacent frames with CPD and, using a one-to-one greedy match on angle + center-distance difference, detects duplicate copies of the same organ across consecutive frames — keeping the larger copy and resetting the other to the old-organ label — then unifies the two per-frame edit passes (source / target) by label pairs to produce cross-frame-consistent organ labels.<br>
+* file <strong>[2_Cluster_labelling.py]</strong>: Reads the final predictions, re-maps labels to consecutive integers, and splits each frame into old-organ (label 0) and new-organ (non-zero) point clouds exported to separate directories.<br>
+* file <strong>[read_pointclouds.py]</strong>: Visualization for the point cloud.<br>
 
 <br>
 <strong>Note:</strong> When running the code, if standard_mode is True, it refers to the standard 3D-OGT using the pre-trained 3D-NOD network; conversely, if standard_mode is False, it represents the control group employing the fully manual new organ detection module.<br>
