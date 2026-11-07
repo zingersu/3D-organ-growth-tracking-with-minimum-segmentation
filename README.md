@@ -14,7 +14,7 @@ Introduction
 ------
 To monitor the growth and structural changes of crop organs, dynamic plant phenotyping based on time-series point clouds has become a cutting-edge research topic. However, existing organ tracking methods based on crop time-series point clouds either rely on complete organ instance segmentation results or lack real-time performance in capturing spatiotemporal correlations among organs. These limitations significantly hinder the development of dynamic crop phenotyping.<br>
 <br>
-3D-OGT is a framework capable of performing continuous organ tracking throughout the entire growth sequence with only the minimal segmentation information. Our framework can automatically propagate organ labels from the previous moment's crop point cloud to the subsequent point cloud, while completing organ segmentation and tracking on multiple crop growth sequences. The framework can recognize and track new organs, mature (old) organs, and even suddenly disappeared organs. Experimental results on a spatiotemporal point cloud dataset demonstrate that the 3D-OGT framework achieves satisfactory organ tracking performance. The main workflow of our 3D-OGT is shonw in Fig. 1. <br>
+3D-OGT is a framework capable of performing continuous organ tracking throughout the entire growth sequence with only the minimal segmentation information. Our framework can automatically propagate organ labels from the previous moment's crop point cloud to the subsequent point cloud, while completing organ segmentation and tracking on multiple crop growth sequences. The framework can recognize and track new organs, mature (old) organs, and even suddenly disappeared organs. Experimental results on a spatiotemporal point cloud dataset demonstrate that the 3D-OGT framework achieves satisfactory organ tracking performance. The main workflow of our 3D-OGT is shown in Fig. 1. <br>
 <table border="0">
   <tr>
     <td width="100%" align="center">
@@ -55,7 +55,7 @@ Quick Start
 This project contains seven folders.<br>
 folder <strong>[code]</strong> contains the complete implementation of the 3D-OGT framework.<br>
 folder <strong>[norm_GT_fps]</strong> contains all point cloud files with complete and precise instance labels, serving as the foundation for calculating quantitative tracking metrics.<br>
-folder <strong>[instance_new_organ(3D-NOD)]</strong> and folder <strong>[instance_old_organ(3D-NOD)]</strong> comprise the outputs of the 3D-NOD framework, which is uesd as a pre-trained network for detecting new organs. Then the complete plant point cloud is divided into two categories: new organs and old organs.<br>
+folder <strong>[instance_new_organ(3D-NOD)]</strong> and folder <strong>[instance_old_organ(3D-NOD)]</strong> comprise the outputs of the 3D-NOD framework, which is used as a pre-trained network for detecting new organs. Then the complete plant point cloud is divided into two categories: new organs and old organs.<br>
 folder <strong>[instance_new_organ(by human)]</strong> and folder <strong>[instance_old_organ(by human)]</strong> contain their manually curated counterparts, where human annotation replaces the pre-trained network in detecting new organs before dividing them into the same two categories.<br>
 folder <strong>[pretrained_3D-NOD]</strong> holds the 3D-NOD new-organ predictions <strong>[3D-NOD_Predict_results]</strong> together with the post-processing code <strong>[code]</strong> that converts them into data ready for 3D-OGT training.<br>
 * <strong><em>code</em></strong><br>
