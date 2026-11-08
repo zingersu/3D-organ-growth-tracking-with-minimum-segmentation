@@ -53,22 +53,22 @@ In order to stably track all organs in a 4D crop growth sequence, we believe tha
 Quick Start
 ------
 This project contains seven folders.<br>
-folder <strong>[code]</strong> contains the complete implementation of the 3D-OGT framework.<br>
+folder <strong>[code]</strong> contains the complete implementation of the pre-trained 3D-NOD framework.<br>
 folder <strong>[norm_GT_fps]</strong> contains all point cloud files with complete and precise instance labels, serving as the foundation for calculating quantitative tracking metrics.<br>
 folder <strong>[instance_new_organ(3D-NOD)]</strong> and folder <strong>[instance_old_organ(3D-NOD)]</strong> comprise the outputs of the 3D-NOD framework, which is used as a pre-trained network for detecting new organs. Then the complete plant point cloud is divided into two categories: new organs and old organs.<br>
 folder <strong>[instance_new_organ(by human)]</strong> and folder <strong>[instance_old_organ(by human)]</strong> contain their manually curated counterparts, where human annotation replaces the pre-trained network in detecting new organs before dividing them into the same two categories.<br>
 folder <strong>[pretrained_3D-NOD]</strong> holds the 3D-NOD new-organ predictions <strong>[3D-NOD_Predict_results]</strong> together with the post-processing code <strong>[code]</strong> that converts them into data ready for 3D-OGT training.<br>
-* <strong><em>code</em></strong><br>
-* file <strong>[1_Filter_Noise_DBSCAN.py]</strong>: A three-stage post-processing pipeline (DBSCAN denoising + KNN relabeling + embedded-organ correction) for 3D-NOD per-frame point-cloud predictions.<br>
-* file <strong>[2_Cluster_labelling.py]</strong>: Layered DBSCAN plus nearest-cluster assignment to produce instance-level labels (0 = old organ, 1, 2, 3… = new organs) for the filtered new-organ points.<br>
-* file <strong>[3_Judge_BFL.py]</strong>: Aligns adjacent frames with CPD and, using a one-to-one greedy match on angle + center-distance difference, detects duplicate copies of the same organ across consecutive frames — keeping the larger copy and resetting the other to the old-organ label — then unifies the two per-frame edit passes (source / target) by label pairs to produce cross-frame-consistent organ labels.<br>
+<strong><em>Code:</em></strong><br>
+* file <strong>[1_Filter_Noise_DBSCAN.py]</strong>: It is the first step of the three consecutive post-processing steps for the results from 3D-NOD. This step is called “noise reduction” in the original paper supplementary material. This noise reduction comprises three sub-tasks—(i) removal of new organ outliers (DBSCAN denoising); (ii) removal of unreasonable old organ clusters (small clusters relabeling); and (iii) removal of unreasonable new organ clusters (correction for embedded new organ). Practitioners can refer to Fig. S2 in the section S1.1 of the paper supplementary material for further details.<br>
+* file <strong>[2_Cluster_labelling.py]</strong>: It is the second step of the three consecutive post-processing steps for the results from 3D-NOD. This step is to use a two-stage hierarchical DBSCAN algorithm to handle the simultaneous occurrence of multiple new organs at the same moment. In the output of this step “0” = old organ, while “1, 2, 3…” = new organs. Please refer to Fig. S3 in the section S1.1 of the paper supplementary material for further details.<br>
+* file <strong>[3_Judge_BFL.py]</strong>: It is the final step of the three consecutive post-processing steps for the results from 3D-NOD. This step eliminates repetitive detections of the same new organ across time. We perform registration and comparison between two adjacent point clouds in timeline. If the vector from the plant base to the center of an organ at the current moment is highly similar to that of a certain organ at the subsequent moment, the latter new organ will be reclassified as an old organ. Please refer to Fig. S4 in the section S1.1 of the paper supplementary material for further details.<br>
 * file <strong>[4_Distinguish_organ.py]</strong>: Reads the final predictions, re-maps labels to consecutive integers, and splits each frame into old-organ (label 0) and new-organ (non-zero) point clouds exported to separate directories.<br>
 * file <strong>[read_pointclouds.py]</strong>: Visualization for the point cloud.<br>
 
 <br>
-<strong>Note:</strong> When running the code, if standard_mode is True, it refers to the standard 3D-OGT using the pre-trained 3D-NOD network; conversely, if standard_mode is False, it represents the control group employing the fully manual new organ detection module.<br>
+<strong>Note:</strong> When running the code, if standard_mode is True, it refers to the standard 3D-OGT using the pre-trained 3D-NOD network. Conversely, if standard_mode is False, it represents the control group employing the fully manual new organ detection module.<br>
 
-<strong><em>code</em></strong><br>
+<strong><em>Code:</em></strong><br>
 The folder contains the specific implementation of the 3D-OGT framework, providing all the necessary scripts and modules required to run the organ growth tracking system.<br>
 * file <strong>[1_train.py]</strong> is used to track organ growth throughout the entire crop point cloud sequence.<br>
 * file <strong>[2_eval_label_reset.py]</strong> is used to reset the instance label corresponding to the new organ, avoiding the decline in quantitative tracking results due to missed detection of the new organ.<br>
