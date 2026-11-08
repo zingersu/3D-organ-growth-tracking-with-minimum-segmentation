@@ -54,7 +54,7 @@ Quick Start
 ------
 This project contains seven folders.<br>
 folder <strong>[code]</strong> contains the complete implementation of the standard 3D-OGT framework.<br>
-<strong><em>Code:</em></strong><br>
+<strong><em>code:</em></strong><br>
 The folder contains the specific implementation of the 3D-OGT framework, providing all the necessary scripts and modules required to run the organ growth tracking system.<br>
 * file <strong>[1_train.py]</strong> is used to track organ growth throughout the entire crop point cloud sequence.<br>
 * file <strong>[2_eval_label_reset.py]</strong> is used to reset the instance label corresponding to the new organ, avoiding the decline in quantitative tracking results due to missed detection of the new organ.<br>
@@ -73,7 +73,6 @@ The post-processing code for pre-trained 3D-NOD results are explained as follows
 * file <strong>[3_Judge_BFL.py]</strong>: It is the final step of the three consecutive post-processing steps for the results from 3D-NOD. This step eliminates repetitive detections of the same new organ across time. We perform registration and comparison between two adjacent point clouds in timeline. If the vector from the plant base to the center of an organ at the current moment is highly similar to that of a certain organ at the subsequent moment, the latter new organ will be reclassified as an old organ. Please refer to Fig. S4 in the section S1.1 of the paper supplementary material for further details.<br>
 * file <strong>[4_Distinguish_organ.py]</strong>: Reads the final predictions, re-maps labels to consecutive integers, and splits each frame into old-organ (label 0) and new-organ (non-zero) point clouds exported to separate directories.<br>
 * file <strong>[read_pointclouds.py]</strong>: Visualization for the point cloud.<br>
-
 <br>
 <strong>Note:</strong> When running the code, if standard_mode is True, it refers to the standard 3D-OGT using the pre-trained 3D-NOD network. Conversely, if standard_mode is False, it represents the control group employing the fully manual new organ detection module.<br>
 
