@@ -54,7 +54,7 @@ Quick Start
 ------
 This project contains seven folders.<br>
 folder <strong>[code]</strong> contains the complete implementation of the standard 3D-OGT framework.<br>
-<strong><em>code:</em></strong><br>
+<strong><em>[code]:</em></strong><br>
 The folder contains the specific implementation of the 3D-OGT framework, providing all the necessary scripts and modules required to run the organ growth tracking system.<br>
 * file <strong>[1_train.py]</strong> is used to track organ growth throughout the entire crop point cloud sequence.<br>
 * file <strong>[2_eval_label_reset.py]</strong> is used to reset the instance label corresponding to the new organ, avoiding the decline in quantitative tracking results due to missed detection of the new organ.<br>
