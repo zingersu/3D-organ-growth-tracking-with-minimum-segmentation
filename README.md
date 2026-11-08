@@ -59,7 +59,7 @@ The folder contains the specific implementation of the 3D-OGT framework, providi
 * file <strong>[1_train.py]</strong> is used to track organ growth throughout the entire crop growth sequence.<br>
 * file <strong>[2_eval_label_reset.py]</strong> is used to reset the instance label corresponding to the new organ for avoiding unnecessary decline in quantitative metrics. For example, on a certain time point, three new organs are assigned labels "7,8,9" respectively in GT. Howerver, on the 3D-OGT output the three organs are assigned labels "8,9,7", respectively. On the first look it seems that all new organs are wrong; but they are actually all correct because the three new organs appear at the same time and are order-independent. [2_eval_label_reset.py] is used to resolve this issue.<br>
 * file <strong>[3_eval_iou_track.py]</strong> is used to calculate the Intersection over Union (IoU) between all ground-truth organ instance labels and all algorithm-predicted organ instance labels, forming an IoU matrix. Then for each ground-truth organ, we search for the corresponding predicted organ label number that has the maximum IoU value. <br>
-* file <strong>[4_evaluation.py]</strong> is used to calculate the final quantitative tracking results for each plant variety.<br>
+* file <strong>[4_evaluation.py]</strong> is used to calculate the final quantitative tracking results for each plant species.<br>
 <br>
 
 folder <strong>[norm_GT_fps]</strong> contains all point cloud files with complete and precise instance labels, serving as the foundation for calculating quantitative tracking metrics.<br>
