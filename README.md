@@ -54,6 +54,14 @@ Quick Start
 ------
 This project contains seven folders.<br>
 folder <strong>[code]</strong> contains the complete implementation of the standard 3D-OGT framework.<br>
+<strong><em>Code:</em></strong><br>
+The folder contains the specific implementation of the 3D-OGT framework, providing all the necessary scripts and modules required to run the organ growth tracking system.<br>
+* file <strong>[1_train.py]</strong> is used to track organ growth throughout the entire crop point cloud sequence.<br>
+* file <strong>[2_eval_label_reset.py]</strong> is used to reset the instance label corresponding to the new organ, avoiding the decline in quantitative tracking results due to missed detection of the new organ.<br>
+* file <strong>[3_eval_iou_track.py]</strong> is used to calculate the Intersection over Union (IoU) between all ground-truth organ instance labels and all algorithm-predicted organ instance labels, forming an IoU matrix. Then for each ground-truth organ, we search for the corresponding organ label number, where the organ point set represented by the organ label number can yield the maximum IoU value with this ground-truth organ. <br>
+* file <strong>[4_evaluation.py]</strong> is used to calculate the final quantitative tracking results for each plant variety.<br>
+<br>
+
 folder <strong>[norm_GT_fps]</strong> contains all point cloud files with complete and precise instance labels, serving as the foundation for calculating quantitative tracking metrics.<br>
 folder <strong>[instance_new_organ(3D-NOD)]</strong> and folder <strong>[instance_old_organ(3D-NOD)]</strong> comprise the outputs of the 3D-NOD framework, which is used as a pre-trained network for detecting new organs. Then the complete plant point cloud is divided into two categories: new organs and old organs.<br>
 folder <strong>[instance_new_organ(by human)]</strong> and folder <strong>[instance_old_organ(by human)]</strong> contain their manually curated counterparts, where human annotation replaces the pre-trained network in detecting new organs before dividing them into the same two categories.<br>
@@ -69,10 +77,3 @@ The post-processing code for pre-trained 3D-NOD results are explained as follows
 <br>
 <strong>Note:</strong> When running the code, if standard_mode is True, it refers to the standard 3D-OGT using the pre-trained 3D-NOD network. Conversely, if standard_mode is False, it represents the control group employing the fully manual new organ detection module.<br>
 
-<strong><em>Code:</em></strong><br>
-The folder contains the specific implementation of the 3D-OGT framework, providing all the necessary scripts and modules required to run the organ growth tracking system.<br>
-* file <strong>[1_train.py]</strong> is used to track organ growth throughout the entire crop point cloud sequence.<br>
-* file <strong>[2_eval_label_reset.py]</strong> is used to reset the instance label corresponding to the new organ, avoiding the decline in quantitative tracking results due to missed detection of the new organ.<br>
-* file <strong>[3_eval_iou_track.py]</strong> is used to calculate the Intersection over Union (IoU) between all ground-truth organ instance labels and all algorithm-predicted organ instance labels, forming an IoU matrix. Then for each ground-truth organ, we search for the corresponding organ label number, where the organ point set represented by the organ label number can yield the maximum IoU value with this ground-truth organ. <br>
-* file <strong>[4_evaluation.py]</strong> is used to calculate the final quantitative tracking results for each plant variety.<br>
-<br>
